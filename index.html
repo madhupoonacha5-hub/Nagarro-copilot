@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Account Growth Copilot · Strategic Account Growth Showcase</title>
+<meta name="description" content="A self-running demo of how an AI copilot helps a strategic account leader plan 15% growth, shape the CXO agenda, build business cases and prepare negotiations. Synthetic data.">
+<style>
+:root{color-scheme:dark;--bg:#081726;--p:#0f2740;--p2:#143453;--ln:#24476b;--ink:#eef5ff;--mu:#9db4cf;--ac:#19c3a6;--bl:#3b8cff;--am:#ffb84d;--bad:#ff6b7a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(900px 400px at 90% -10%,#12406a 0,transparent 60%),var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:1100px;margin:auto;padding:0 1.2rem}h1{font-size:1.6rem;margin:.1rem 0}h2{font-size:1.15rem;margin:0 0 .5rem}h3{font-size:.95rem;margin:.9rem 0 .3rem}
+header{padding:1.1rem 0 .4rem}header p{color:var(--mu);margin:.2rem 0;font-size:.9rem;max-width:75ch}
+.bar{position:sticky;top:0;background:#081726ee;backdrop-filter:blur(8px);border-block:1px solid var(--ln);padding:.5rem 0;z-index:5}.bar .w{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+button{font:inherit;color:var(--ink);background:var(--p2);border:1px solid var(--ln);border-radius:8px;padding:.35rem .8rem;cursor:pointer;font-size:.85rem}button:hover{border-color:var(--ac)}
+.on{background:linear-gradient(135deg,var(--bl),var(--ac));border-color:transparent;color:#021;font-weight:700}.ok{background:var(--ac);color:#021;border-color:var(--ac);font-weight:700}.no{background:none;color:var(--bad);border-color:var(--bad)}
+nav{display:flex;gap:.3rem;flex-wrap:wrap;padding:.7rem 0}nav button{background:none;border-color:transparent;color:var(--mu)}nav .cur{background:var(--p2);border-color:var(--bl);color:var(--ink)}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.8rem}.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.c{background:var(--p);border:1px solid var(--ln);border-radius:12px;padding:.9rem 1rem}.k b{display:block;font-size:1.6rem}.k span,.n{color:var(--mu);font-size:.84rem}
+.meter{height:10px;background:var(--ln);border-radius:6px;overflow:hidden;margin:.4rem 0}.meter i{display:block;height:100%;background:linear-gradient(90deg,var(--bl),var(--ac));transition:width .6s}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:.45rem .5rem;border-bottom:1px solid var(--ln);font-size:.88rem;vertical-align:top}th{color:var(--mu);font-weight:500}
+.f div{padding:.45rem 0;border-bottom:1px dashed var(--ln);font-size:.88rem}.t{color:var(--am);font-weight:600}.gate{border:1px solid var(--am);border-radius:10px;padding:.7rem;margin:.6rem 0}
+input[type=range]{width:100%;accent-color:var(--ac)}pre{background:#06111c;border:1px solid var(--ln);border-radius:8px;padding:.7rem;white-space:pre-wrap;font-size:.82rem}
+footer{color:var(--mu);font-size:.78rem;text-align:center;padding:1.5rem 1rem}main{padding-bottom:1rem}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div class="w"><header><h1>Account Growth Copilot</h1><p>A self-running demo for one synthetic enterprise account: signals arrive, the copilot updates the growth plan, and anything client-facing stops for a human to approve.</p></header></div>
+<div class="bar"><div class="w"><button class="on" id="ap" data-a="tog">⏸ Autopilot ON</button><button id="hf" class="on" data-a="hf">Hands-free: ON</button><button data-a="rep">↺ Replay</button><span class="n" style="margin-left:auto" id="st"></span></div></div>
+<div class="w"><nav id="nav"></nav><main id="v"></main></div>
+<footer>Synthetic data. "Aurelia Wellness Group" is fictional. Built as a portfolio piece; not affiliated with or endorsed by Nagarro or any client.</footer>
+<script>
+const $=s=>document.querySelector(s),M=n=>"$"+n.toFixed(2)+"M",BASE=20.4,TGT=BASE*1.15,GAP=TGT-BASE;
+const O0=[{n:"AI patient scheduling and no-show reduction",v:1.2,p:55,l:"Data & AI"},{n:"LLM support triage and knowledge assistant",v:.9,p:60,l:"AI for Change"},{n:"Cloud cost (FinOps) and platform modernization",v:1.1,p:50,l:"Cloud"},{n:"Data platform consolidation across regions",v:.8,p:40,l:"Data Engineering"},{n:"Managed QA and test automation",v:.5,p:70,l:"Quality Engineering"},{n:"Rate card modernization on legacy SOWs",v:.35,p:80,l:"Commercial"}];
+const EV=[
+{t:"QBR notes",x:"CIO asks how peers cut no-shows with AI. CFO wants payback under 12 months.",a:"Drafted a CXO brief and payback model. Marked opportunity 1 as priority.",o:0,d:10,g:"Send the CXO brief to the CIO and CFO?"},
+{t:"Support analytics",x:"Contact volume is up 22% quarter on quarter. Knowledge base covers 41% of cases.",a:"Mapped to LLM triage. Pulled in the AI for Change advisor.",o:1,d:10},
+{t:"Procurement email",x:"Rate card review requested, asking 8% off across all SOWs.",a:"Built a give-and-get: 3% in exchange for a 12-month volume commitment, margin floor untouched.",o:5,d:5,g:"Approve the counter-offer before it goes to Procurement?"},
+{t:"Cloud invoice",x:"Cloud spend up 31% year on year with no tagging standard.",a:"Proposed a fixed-fee FinOps assessment as a low-risk entry point.",o:2,d:10},
+{t:"CDO workshop",x:"Three data platforms across regions. The CDO sponsors consolidation.",a:"Raised confidence and scheduled an architecture workshop with the capability lead.",o:3,d:15},
+{t:"Delivery health",x:"Delivery lead reports 94% milestone delivery and a happy product owner.",a:"Flagged a reference window and drafted a testimonial request.",o:4,d:5,g:"Send the testimonial request to the client sponsor?"}];
+let O,S,tm,tab="ov";
+function init(){O=O0.map(o=>({...o,on:1}));S={i:0,on:1,hf:1,feed:[],gate:null,age:0,done:0,appr:0};}
+const wt=()=>O.reduce((a,o)=>a+(o.on?o.v*o.p/100:0),0),un=()=>O.reduce((a,o)=>a+(o.on?o.v:0),0);
+function tick(){if(S.gate){S.age++;if(S.hf&&S.age>=2)dec(1,"Simulated approver");return}
+if(S.i>=EV.length){S.done=1;S.on=0;clearInterval(tm);ui();return}
+const e=EV[S.i++];O[e.o].p=Math.min(95,O[e.o].p+e.d);S.feed.unshift({t:e.t,x:e.x,a:e.a,g:e.g?"gate":""});if(e.g){S.gate={m:e.g,f:S.feed[0]};S.age=0}ui()}
+function dec(ok,w){const g=S.gate;if(!g)return;g.f.g=ok?"Approved by "+w:"Rejected by "+w+", copilot revises";if(ok)S.appr++;S.gate=null;ui()}
+function ov(){const w=wt(),gap=GAP-w;return `<div class="g"><div class="c k"><b>${M(BASE)}</b><span>Current annual revenue</span></div><div class="c k"><b>${M(TGT)}</b><span>FY27 target (+15%)</span></div><div class="c k"><b>${M(GAP)}</b><span>Growth to find</span></div><div class="c k"><b>${M(w)}</b><span>Weighted pipeline</span></div><div class="c k"><b>${(un()/GAP).toFixed(1)}x</b><span>Pipeline coverage</span></div></div>
+<div class="c" style="margin:.8rem 0"><h2>${gap<=0?"On track: weighted pipeline covers the 15% target":"Gap to target: "+M(gap)}</h2><div class="meter"><i style="width:${Math.min(100,w/GAP*100)}%"></i></div><span class="n">${gap<=0?"Copilot now shifts focus to deal quality, margin and delivery capacity.":"Copilot is looking for signals to lift probabilities or add whitespace."}</span></div>
+${S.gate?`<div class="gate"><b>Needs your approval:</b> ${S.gate.m}<br><button class="ok" data-a="yes">Approve</button> <button class="no" data-a="no">Reject</button></div>`:""}
+<div class="c"><h2>Live signals and copilot actions</h2><div class="f">${S.feed.map(f=>`<div><span class="t">${f.t}</span>: ${f.x}<br>→ ${f.a}${f.g?`<br><span class="n">${f.g==="gate"?"Waiting for approval":f.g}</span>`:""}</div>`).join("")||'<p class="n">Waiting for the first signal.</p>'}</div></div>`}
+function ws(){return `<div class="c"><h2>Whitespace map</h2><p class="n">Untick an opportunity to see the 15% math change.</p><table><tr><th></th><th>Opportunity</th><th>Value</th><th>Win chance</th><th>Capability lead</th></tr>${O.map((o,i)=>`<tr><td><input type="checkbox" data-i="${i}" ${o.on?"checked":""}></td><td>${o.n}</td><td>${M(o.v)}</td><td>${o.p}%<div class="meter"><i style="width:${o.p}%"></i></div></td><td>${o.l}</td></tr>`).join("")}</table><p><b>Weighted ${M(wt())}</b> against a ${M(GAP)} target.</p></div>`}
+const cx=()=>`<div class="g g2"><div class="c"><h2>CXO agenda: Aurelia Wellness Group</h2><h3>What each executive cares about</h3><p><b>CIO:</b> fragmented platforms and AI that works in clinics, not slides.<br><b>CFO:</b> payback under 12 months and predictable spend.<br><b>CDO:</b> one trusted data foundation across three regions.</p><h3>Point of view</h3><p>Start with the no-show problem: it is measurable, fast to prove and funds the data work that follows.</p></div><div class="c"><h3>AI use cases ranked by value and speed</h3><p>1. Smart scheduling and no-show prediction<br>2. LLM support triage with a knowledge assistant<br>3. Demand forecasting for staffing<br><h3>Guardrails</h3>Human review on patient-facing messages, data residency by region, and a clear exit if value is not shown in 90 days.</p></div></div>`;
+function bc(){const r=+$("#r1")?.value||3,c=+$("#r2")?.value||60,iv=+$("#r3")?.value||1.2,ben=910000*(r/100)*165*(c/100)/1e6;return `<div class="c"><h2>Business case: smart scheduling (illustrative)</h2><p class="n">140 clinics, about 910,000 appointments a year, $165 average value.</p><div class="g"><label>No-show reduction: <b id="o1">${r}</b> pts<input type="range" id="r1" min="1" max="6" value="${r}"></label><label>Revenue recaptured: <b id="o2">${c}</b>%<input type="range" id="r2" min="30" max="90" value="${c}"></label><label>Investment: <b id="o3">${iv}</b> $M<input type="range" id="r3" min="0.6" max="2" step="0.1" value="${iv}"></label></div><div class="g" style="margin-top:.8rem"><div class="c k"><b id="b1">${M(ben)}</b><span>Annual benefit</span></div><div class="c k"><b id="b2">${(iv/ben*12).toFixed(1)} mo</b><span>Payback</span></div><div class="c k"><b id="b3">${Math.round((ben*3-iv)/iv*100)}%</b><span>3-year ROI</span></div></div></div>`}
+const ng=()=>`<div class="c"><h2>Negotiation playbook</h2><table><tr><th>Counterpart</th><th>Likely ask</th><th>Lever</th><th>Give and get</th></tr><tr><td>Procurement</td><td>8% rate card cut</td><td>Volume and term</td><td>3% off for a 12-month commitment</td></tr><tr><td>Legal</td><td>Uncapped liability and IP transfer</td><td>Risk tied to fees</td><td>Super-cap on fees, standard IP carve-outs</td></tr><tr><td>CFO</td><td>Guaranteed payback</td><td>Milestone pricing</td><td>Part of the fee tied to measured outcomes</td></tr></table><p class="n">Rule: never trade price without trading scope, term or commitment.</p></div>`;
+const R=["AI triage live and contact volume falling","FinOps assessment delivered under budget","Quarterly review rated excellent by the CIO"];
+const rf=()=>`<div class="c"><h2>Proof and references</h2><p class="n">Copilot spots moments of client delight and drafts the ask. A human sends it.</p>${R.map((r,i)=>`<div class="row" style="padding:.4rem 0"><span>${r}</span> <button data-a="ask:${i}">Draft ask</button></div>`).join("")}<pre id="ask" hidden></pre></div>`;
+const V={ov,ws,cx,bc,ng,rf},T=[["ov","Overview"],["ws","Whitespace"],["cx","CXO agenda"],["bc","Business case"],["ng","Negotiation"],["rf","References"]];
+function render(){$("#nav").innerHTML=T.map(([k,l])=>`<button class="${tab===k?"cur":""}" data-a="tab:${k}">${l}</button>`).join("");$("#v").innerHTML=V[tab]();$("#st").textContent=S.done?"Replay complete":S.gate?"Awaiting approval":"Autopilot running"}
+function ui(){if(tab==="bc"||tab==="rf"&&!$("#ask").hidden){$("#st").textContent=S.gate?"Awaiting approval":"Autopilot running";return}render()}
+function run(){clearInterval(tm);if(S.on)tm=setInterval(tick,3200)}
+document.addEventListener("click",e=>{const el=e.target.closest("[data-a]");if(!el)return;const[a,v]=el.dataset.a.split(":");
+if(a==="tab"){tab=v}else if(a==="yes")dec(1,"You");else if(a==="no")dec(0,"You");
+else if(a==="tog"){S.on=!S.on;el.textContent=S.on?"⏸ Autopilot ON":"▶ Autopilot PAUSED";el.classList.toggle("on",S.on);run()}
+else if(a==="hf"){S.hf=!S.hf;el.textContent="Hands-free: "+(S.hf?"ON":"OFF");el.classList.toggle("on",S.hf)}
+else if(a==="rep"){init();$("#ap").textContent="⏸ Autopilot ON";$("#ap").classList.add("on");run()}
+else if(a==="ask"){const p=$("#ask");p.hidden=false;p.textContent=`Hi [Sponsor],\n\nThank you for the partnership this quarter. ${R[+v]}, and we would value your perspective.\n\nWould you be open to a short testimonial or reference call we could share with peers? I can draft it for your review.\n\nBest regards`;return}
+render()});
+document.addEventListener("change",e=>{if(e.target.dataset.i!==undefined){O[+e.target.dataset.i].on=e.target.checked?1:0;render()}});
+document.addEventListener("input",e=>{if(!/^r[123]$/.test(e.target.id))return;const r=+$("#r1").value,c=+$("#r2").value,iv=+$("#r3").value,b=910000*(r/100)*165*(c/100)/1e6;$("#o1").textContent=r;$("#o2").textContent=c;$("#o3").textContent=iv;$("#b1").textContent=M(b);$("#b2").textContent=(iv/b*12).toFixed(1)+" mo";$("#b3").textContent=Math.round((b*3-iv)/iv*100)+"%"});
+init();render();run();
+</script></body></html>
